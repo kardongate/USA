@@ -1,3 +1,44 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://kardongate.github.io/note/"
+languageCode = "zh-cn"
+title = "Uncle’s Snark Arts"
+theme = "PaperMod"
+
+[pagination]
+  pagerSize = 30
+
+# 让 GitHub Pages 正常处理 public/
+publishDir = "public"
+
+# 开启清爽的内容格式
+enableEmoji = false
+enableGitInfo = false
+enableRobotsTXT = true
+
+# PaperMod 主题配置
+[params]
+  title = "Uncle’s Snark Arts"
+  description = "A snarky archive of texts, thoughts, fragments, and arts."
+  keywords = ["snark", "arts", "text archive", "blog"]
+  author = "Uncle"
+  defaultTheme = "auto"   # 可选: light / dark / auto
+  disableThemeToggle = false
+
+  showReadingTime = true
+  showShareButtons = false
+  showPostNavLinks = true
+  showBreadCrumbs = true
+  showCodeCopyButtons = true
+
+# 让每篇文章默认以 content/文件名 生成为文章
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+# GitHub Pages canonical 配置
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# 有上万文件时非常重要：提高文件扫描效率
+[security]
+  enableInlineShortcodes = true
+
