@@ -1,4 +1,4 @@
-baseURL = "https://kardongate.github.io/USA/" # ⚠️ 请务必确认这里对应你的仓库名
+baseURL = "https://kardongate.github.io/USA/"
 languageCode = "zh-cn"
 title = "Uncle’s Snark Arts"
 theme = "PaperMod"
@@ -6,7 +6,7 @@ theme = "PaperMod"
 [pagination]
   pagerSize = 30
 
-# 开启 HTML 支持（对 Obsidian 用户极其重要，因为有些插件会生成 HTML）
+# 开启 HTML 支持
 [markup.goldmark.renderer]
   unsafe = true
 
@@ -16,7 +16,7 @@ theme = "PaperMod"
 
 # PaperMod 核心参数
 [params]
-  env = "production" # 建议加上，有些功能依赖此环境
+  env = "production"
   title = "Uncle’s Snark Arts"
   description = "A snarky archive of texts, thoughts, fragments, and arts."
   keywords = ["snark", "arts", "text archive", "blog"]
@@ -26,7 +26,7 @@ theme = "PaperMod"
 
   # 界面元素控制
   showReadingTime = true
-  showShareButtons = false # 社交分享国内通常用不上，关掉清爽
+  showShareButtons = false
   showPostNavLinks = true
   showBreadCrumbs = true
   showCodeCopyButtons = true
