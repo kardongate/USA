@@ -1,4 +1,4 @@
-baseURL = "https://kardongate.github.io/note/"
+baseURL = "https://kardongate.github.io/USA/" # ⚠️ 请务必确认这里对应你的仓库名
 languageCode = "zh-cn"
 title = "Uncle’s Snark Arts"
 theme = "PaperMod"
@@ -6,39 +6,56 @@ theme = "PaperMod"
 [pagination]
   pagerSize = 30
 
-# 让 GitHub Pages 正常处理 public/
-publishDir = "public"
+# 开启 HTML 支持（对 Obsidian 用户极其重要，因为有些插件会生成 HTML）
+[markup.goldmark.renderer]
+  unsafe = true
 
-# 开启清爽的内容格式
-enableEmoji = false
-enableGitInfo = false
-enableRobotsTXT = true
+# 开启搜索功能所需的 JSON 输出
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
 
-# PaperMod 主题配置
+# PaperMod 核心参数
 [params]
+  env = "production" # 建议加上，有些功能依赖此环境
   title = "Uncle’s Snark Arts"
   description = "A snarky archive of texts, thoughts, fragments, and arts."
   keywords = ["snark", "arts", "text archive", "blog"]
   author = "Uncle"
-  defaultTheme = "auto"   # 可选: light / dark / auto
+  defaultTheme = "auto"
   disableThemeToggle = false
 
+  # 界面元素控制
   showReadingTime = true
-  showShareButtons = false
+  showShareButtons = false # 社交分享国内通常用不上，关掉清爽
   showPostNavLinks = true
   showBreadCrumbs = true
   showCodeCopyButtons = true
+  
+  # 搜索配置 (配合上面的 outputs)
+  [params.fuseOpts]
+    isCaseSensitive = false
+    score = 0.5
+    minMatchCharLength = 2
+    keys = ["title", "permalink", "summary", "content"]
 
-# 让每篇文章默认以 content/文件名 生成为文章
-[markup]
-  [markup.goldmark.renderer]
-    unsafe = true
+# 导航菜单
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    identifier = "search"
+    name = "Search"
+    url = "search/"
+    weight = 20
+  [[menu.main]]
+    identifier = "archives"
+    name = "Archive"
+    url = "archives/"
+    weight = 30
 
-# GitHub Pages canonical 配置
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-
-# 有上万文件时非常重要：提高文件扫描效率
+# 安全设置
 [security]
   enableInlineShortcodes = true
-
