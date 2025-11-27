@@ -1,0 +1,17 @@
+<%*
+  // 生成当前日期的字符串，如 "2023-11-25"
+  let dateStr = tp.date.now("YYYY-MM-DD");
+  // 提示用户输入英文 Slug (URL后缀)
+  let slug = await tp.system.prompt("请输入英文URL Slug (例如: my-first-post)");
+  // 如果用户没输入，就用 "untitled" 加上随机数兜底
+  if (!slug) { slug = "untitled-" + Math.floor(Math.random() * 1000); }
+  
+  // 重命名文件为 "日期-Slug"，例如 "2023-11-25-my-first-post"
+  await tp.file.rename(`${dateStr}-${slug}`);
+%>
+---
+title: "<% tp.file.title %>"
+date: <% tp.date.now("YYYY-MM-DDTHH:mm:ss") %>+08:00
+draft: true
+slug: "<% slug %>"
+---
