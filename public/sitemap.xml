@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/USA/posts/20251124/</loc>
-    <lastmod>2025-11-24T23:58:00+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/USA/posts/</loc>
     <lastmod>2025-11-24T23:58:00+08:00</lastmod>
   </url><url>
@@ -19,6 +16,12 @@
   </url><url>
     <loc>http://localhost:1313/USA/tags/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2025-11-24T23:58:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/USA/posts/hanyu/</loc>
+    <lastmod>2025-08-19T00:51:19+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/USA/posts/jiaohun/</loc>
+    <lastmod>2025-01-29T21:29:17+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/USA/archives/</loc>
   </url><url>
