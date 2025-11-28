@@ -8,19 +8,22 @@
     <loc>http://localhost:1313/USA/posts/</loc>
     <lastmod>2025-11-24T23:58:00+08:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/USA/tags/</loc>
+    <lastmod>2025-11-24T23:58:00+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/USA/</loc>
     <lastmod>2025-11-24T23:58:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/USA/posts/2025-11-25-xiezaiwanshengjie/</loc>
+    <lastmod>2025-11-24T23:58:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/USA/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2025-11-24T23:58:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/USA/archives/</loc>
   </url><url>
     <loc>http://localhost:1313/USA/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/USA/search/</loc>
-  </url><url>
-    <loc>http://localhost:1313/USA/tags/</loc>
-  </url><url>
-    <loc>http://localhost:1313/USA/tags/%E9%9A%8F%E7%AC%94/</loc>
   </url>
 </urlset>
