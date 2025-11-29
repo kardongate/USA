@@ -27,8 +27,8 @@ theme = "PaperMod"
   # --- 开启个人主页模式 (Profile Mode) ---
   [params.profileMode]
     enabled = true
-    title = "Uncle’s Snark Arts" # 主页大标题
-    subtitle = "Data | Logic | Philosophy" # 副标题
+    title = "叔的剑法" # 主页大标题
+    subtitle = "Uncle’s Snark Arts" # 副标题
     # ⚠️ 关键：请把下面这个链接换成你自己的头像链接 (可以是本地 /images/avatar.jpg 或网络图片)
     imageUrl = "https://github.com/kardongate.png" 
     imageWidth = 120
