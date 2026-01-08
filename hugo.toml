@@ -1,4 +1,6 @@
-baseURL = "https://kardongate.github.io/USA/"
+baseURL = ""  # 留空或者随便填，开启下面这个开关后它就不重要了
+relativeURLs = true
+canonifyURLs = false
 languageCode = "zh-cn"
 title = "Uncle’s Snark Arts"
 theme = "PaperMod"
