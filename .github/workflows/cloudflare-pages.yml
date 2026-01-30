@@ -1,0 +1,54 @@
+# .github/workflows/cloudflare-pages.yml
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main  # 监听 main 分支的推送
+  workflow_dispatch:  # 允许手动触发
+
+# 设置权限
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Cloudflare Pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive  # 重要：拉取主题子模块
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Hugo
+        run: |
+          wget -O ${{ runner.temp }}/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.146.0/hugo_extended_0.146.0_linux-amd64.tar.gz
+          tar -xf ${{ runner.temp }}/hugo.tar.gz -C ${{ runner.temp }}
+          sudo mv ${{ runner.temp }}/hugo /usr/local/bin/
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Hugo
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo --minify --gc
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}  # 在仓库设置中配置
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}  # 在仓库设置中配置
+          projectName: 'your-project-name'  # 替换为您的 Cloudflare Pages 项目名
+          directory: './public'
+          wranglerVersion: '3'

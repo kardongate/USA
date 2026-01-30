@@ -1,0 +1,210 @@
+diff --git a/content/.obsidian/plugins/obsidian-git/git_credentials_input b/content/.obsidian/plugins/obsidian-git/git_credentials_input
+index 4cee4d1..a5cecad 100644
+--- a/content/.obsidian/plugins/obsidian-git/git_credentials_input
++++ b/content/.obsidian/plugins/obsidian-git/git_credentials_input
+@@ -1 +1 @@
+-Username for 'https://github.com': 
++Password for 'https://github.com': 
+diff --git a/hugo-fixed.toml b/hugo-fixed.toml
+new file mode 100644
+index 0000000..ca8cf15
+--- /dev/null
++++ b/hugo-fixed.toml
+@@ -0,0 +1,89 @@
++# 修正后的 Hugo 配置，适用于 Cloudflare Pages 部署
++# Cloudflare Pages 会自动设置 BASE_URL 环境变量
++
++# baseURL 保持为空，在 Cloudflare Pages 中会被自动设置
++baseURL = ""
++
++# 关闭 relativeURLs，避免链接错位问题
++relativeURLs = false
++
++# 保持 canonifyURLs 为 false
++canonifyURLs = false
++
++languageCode = "zh-cn"
++title = "Uncle’s Snark Arts"
++theme = "PaperMod"
++
++[pagination]
++  pagerSize = 30
++
++[markup.goldmark.renderer]
++  unsafe = true
++
++[outputs]
++  home = ["HTML", "RSS", "JSON"]
++
++# --- 核心修改区域 Start ---
++[params]
++  env = "production"
++  title = "Uncle’s Snark Arts"
++  description = "A snarky archive of texts, thoughts, fragments, and arts."
++  keywords = ["snark", "arts", "text archive", "blog"]
++  author = "Uncle"
++  
++  # 强制浅色主题 (让界面保持最干净的状态)，如果想要暗色可改为 "auto"
++  defaultTheme = "light" 
++  disableThemeToggle = false
++
++  # --- 开启个人主页模式 (Profile Mode) ---
++  [params.profileMode]
++    enabled = true
++    title = "叔的剑法" # 主页大标题
++    subtitle = "Uncle’s Snark Arts" # 副标题
++    # ⚠️ 关键：请把下面这个链接换成你自己的头像链接 (可以是本地 /images/avatar.jpg 或网络图片)
++    imageUrl = "https://github.com/kardongate.png" 
++    imageWidth = 120
++    imageHeight = 120
++    
++    # 主页圆角按钮
++    [[params.profileMode.buttons]]
++      name = "Blog"
++      url = "posts"
++    [[params.profileMode.buttons]]
++      name = "Github"
++      url = "https://github.com/kardongate"
++
++  # --- 文章内页设置 ---
++  showReadingTime = true
++  showShareButtons = false # 保持清爽，关掉分享按钮
++  showPostNavLinks = true
++  showBreadCrumbs = true
++  showCodeCopyButtons = true
++  
++  # 搜索配置
++  [params.fuseOpts]
++    isCaseSensitive = false
++    score = 0.5
++    minMatchCharLength = 2
++    keys = ["title", "permalink", "summary", "content"]
++# --- 核心修改区域 End ---
++
++[menu]
++  [[menu.main]]
++    identifier = "home"
++    name = "Home"
++    url = "/"
++    weight = 10
++  [[menu.main]]
++    identifier = "search"
++    name = "Search"
++    url = "search/"
++    weight = 20
++  [[menu.main]]
++    identifier = "archives"
++    name = "Archive"
++    url = "archives/"
++    weight = 30
++
++[security]
++  enableInlineShortcodes = true
+\ No newline at end of file
+diff --git a/hugo.cloudflare.toml b/hugo.cloudflare.toml
+new file mode 100644
+index 0000000..686c662
+--- /dev/null
++++ b/hugo.cloudflare.toml
+@@ -0,0 +1,87 @@
++# hugo.cloudflare.toml - 专为 Cloudflare Pages 部署优化的配置
++
++# 在 Cloudflare Pages 中，BASE_URL 环境变量会被自动设置
++# 但如果需要手动指定，请使用您的实际域名
++baseURL = "https://your-project-name.pages.dev/"  # 请替换为您的实际 Cloudflare Pages 地址
++
++# 为 Cloudflare Pages 优化的设置
++relativeURLs = false  # 避免链接错位问题
++canonifyURLs = false
++
++languageCode = "zh-cn"
++title = "Uncle’s Snark Arts"
++theme = "PaperMod"
++
++[pagination]
++  pagerSize = 30
++
++[markup.goldmark.renderer]
++  unsafe = true
++
++[outputs]
++  home = ["HTML", "RSS", "JSON"]
++
++# --- 核心修改区域 Start ---
++[params]
++  env = "production"
++  title = "Uncle’s Snark Arts"
++  description = "A snarky archive of texts, thoughts, fragments, and arts."
++  keywords = ["snark", "arts", "text archive", "blog"]
++  author = "Uncle"
++  
++  # 强制浅色主题 (让界面保持最干净的状态)，如果想要暗色可改为 "auto"
++  defaultTheme = "light" 
++  disableThemeToggle = false
++
++  # --- 开启个人主页模式 (Profile Mode) ---
++  [params.profileMode]
++    enabled = true
++    title = "叔的剑法" # 主页大标题
++    subtitle = "Uncle’s Snark Arts" # 副标题
++    # ⚠️ 关键：请把下面这个链接换成你自己的头像链接 (可以是本地 /images/avatar.jpg 或网络图片)
++    imageUrl = "https://github.com/kardongate.png" 
++    imageWidth = 120
++    imageHeight = 120
++    
++    # 主页圆角按钮
++    [[params.profileMode.buttons]]
++      name = "Blog"
++      url = "posts"
++    [[params.profileMode.buttons]]
++      name = "Github"
++      url = "https://github.com/kardongate"
++
++  # --- 文章内页设置 ---
++  showReadingTime = true
++  showShareButtons = false # 保持清爽，关掉分享按钮
++  showPostNavLinks = true
++  showBreadCrumbs = true
++  showCodeCopyButtons = true
++  
++  # 搜索配置
++  [params.fuseOpts]
++    isCaseSensitive = false
++    score = 0.5
++    minMatchCharLength = 2
++    keys = ["title", "permalink", "summary", "content"]
++# --- 核心修改区域 End ---
++
++[menu]
++  [[menu.main]]
++    identifier = "home"
++    name = "Home"
++    url = "/"
++    weight = 10
++  [[menu.main]]
++    identifier = "search"
++    name = "Search"
++    url = "search/"
++    weight = 20
++  [[menu.main]]
++    identifier = "archives"
++    name = "Archive"
++    url = "archives/"
++    weight = 30
++
++[security]
++  enableInlineShortcodes = true
+\ No newline at end of file
+diff --git a/hugo.toml b/hugo.toml
+index 058652e..127dea4 100644
+--- a/hugo.toml
++++ b/hugo.toml
+@@ -1,5 +1,6 @@
+-baseURL = ""  # 留空或者随便填，开启下面这个开关后它就不重要了
+-relativeURLs = true
++# 为 Cloudflare Pages 设置正确的 baseURL
++baseURL = "https://your-project-name.pages.dev/"  # 请替换为您的实际 Cloudflare Pages 地址
++relativeURLs = false
+ canonifyURLs = false
+ languageCode = "zh-cn"
+ title = "Uncle’s Snark Arts"
