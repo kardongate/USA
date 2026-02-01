@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "fanqiangcode.md",
+                "file": "archives.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "fanqiangcode"
+              "title": "archives"
             }
           }
         ]
@@ -164,8 +164,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,8 +182,8 @@
   },
   "active": "32e1d501ae9dd569",
   "lastOpenFiles": [
-    "posts/2025-12-01-jindaishi.md",
     "fanqiangcode.md",
+    "posts/2025-12-01-jindaishi.md",
     "posts/2025-11-29-jiaohun.md",
     "posts/2025-11-29-hanyu.md",
     "posts/2025-11-25-xiezaiwanshengjie.md",
