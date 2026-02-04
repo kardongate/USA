@@ -2,31 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/USA/posts/</loc>
+    <loc>https://your-project-name.pages.dev/posts/</loc>
+    <lastmod>2026-02-03T20:54:00+08:00</lastmod>
+  </url><url>
+    <loc>https://your-project-name.pages.dev/</loc>
+    <lastmod>2026-02-03T20:54:00+08:00</lastmod>
+  </url><url>
+    <loc>https://your-project-name.pages.dev/posts/yuanhaowen/</loc>
+    <lastmod>2026-02-03T20:54:00+08:00</lastmod>
+  </url><url>
+    <loc>https://your-project-name.pages.dev/posts/jindaishi/</loc>
+    <lastmod>2025-12-01T00:16:24+08:00</lastmod>
+  </url><url>
+    <loc>https://your-project-name.pages.dev/tags/</loc>
     <lastmod>2025-11-24T23:58:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/USA/tags/</loc>
+    <loc>https://your-project-name.pages.dev/posts/2025-11-25-xiezaiwanshengjie/</loc>
     <lastmod>2025-11-24T23:58:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/USA/</loc>
+    <loc>https://your-project-name.pages.dev/tags/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2025-11-24T23:58:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/USA/posts/2025-11-25-xiezaiwanshengjie/</loc>
-    <lastmod>2025-11-24T23:58:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/USA/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2025-11-24T23:58:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/USA/posts/hanyu/</loc>
+    <loc>https://your-project-name.pages.dev/posts/hanyu/</loc>
     <lastmod>2025-08-19T00:51:19+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/USA/posts/jiaohun/</loc>
+    <loc>https://your-project-name.pages.dev/posts/jiaohun/</loc>
     <lastmod>2025-01-29T21:29:17+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/USA/archives/</loc>
+    <loc>https://your-project-name.pages.dev/fanqiangcode/</loc>
   </url><url>
-    <loc>http://localhost:1313/USA/categories/</loc>
+    <loc>https://your-project-name.pages.dev/archives/</loc>
   </url><url>
-    <loc>http://localhost:1313/USA/search/</loc>
+    <loc>https://your-project-name.pages.dev/categories/</loc>
+  </url><url>
+    <loc>https://your-project-name.pages.dev/search/</loc>
   </url>
 </urlset>
