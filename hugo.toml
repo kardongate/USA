@@ -77,5 +77,11 @@ theme = "PaperMod"
     url = "archives/"
     weight = 30
 
+  [[menu.main]]
+    identifier = "era-names"
+    name = "年号查询"
+    url = "era-names/"
+    weight = 40
+
 [security]
   enableInlineShortcodes = true
