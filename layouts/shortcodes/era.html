@@ -1,0 +1,21 @@
+{{- $name := .Get "name" -}}
+{{- $label := .Get "label" | default $name -}}
+{{- $conv := .Get "conv" -}}
+{{- $polity := .Get "polity" -}}
+{{- $ruler := .Get "ruler" -}}
+{{- $span := .Get "span" -}}
+{{- $note := .Get "note" -}}
+<span class="era" tabindex="0">{{ $label }}<span class="era-tip"><span class="era-tip-name">{{ $label }}</span>{{ with $conv }}<span class="era-tip-conv">= {{ . }}</span>{{ end }}{{ if or $polity $ruler }}<span class="era-tip-meta">{{ $polity }}{{ if and $polity $ruler }} · {{ end }}{{ $ruler }}</span>{{ end }}{{ with $span }}<span class="era-tip-meta">年号「{{ $name }}」使用期间：{{ . }}</span>{{ end }}{{ with $note }}<span class="era-tip-note">{{ . }}</span>{{ end }}<a class="era-tip-link" href="{{ "era-names/" | relURL }}">在年号查询中打开</a></span></span>
+{{- if not (.Page.Scratch.Get "eraTipScript") -}}
+{{- .Page.Scratch.Set "eraTipScript" true }}
+<script>
+  // 年号提示卡: 触屏点按开关, 点别处关闭 (桌面端悬停由 CSS 处理)
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('.era');
+    document.querySelectorAll('.era.open').forEach(function (o) {
+      if (o !== el) o.classList.remove('open');
+    });
+    if (el && !e.target.closest('.era-tip-link')) el.classList.toggle('open');
+  });
+</script>
+{{- end -}}
